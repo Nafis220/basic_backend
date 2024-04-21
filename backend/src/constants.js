@@ -1,9 +1,5 @@
-import express from "express";
-const app = express();
-import dotenv from "dotenv";
-dotenv.config({ path: "./.env" });
-
-const users = [
+export const DB_NAME = "visualworld";
+export const users = [
   {
     id: 1,
     name: "Leanne Graham",
@@ -235,14 +231,3 @@ const users = [
     },
   },
 ];
-
-app.get("/api", (req, res) => {
-  res.send("Hello world");
-});
-app.get("/api/data", (req, res) => {
-  res.json(users);
-});
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`app is listening to port ${PORT}`);
-});
